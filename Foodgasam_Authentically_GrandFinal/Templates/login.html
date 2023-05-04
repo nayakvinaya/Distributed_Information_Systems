@@ -1,0 +1,78 @@
+
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+	<link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+	<style>
+		body {
+		background-image: url("{{ url_for('static', filename='Images/login_signup.png') }}");
+		background-repeat: no-repeat;
+		background-size: cover;
+		}
+		</style>
+
+    <title>Login Page</title>
+	<style>
+	
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+		.container {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+		input[type="email"], input[type="password"] {
+			padding: 10px;
+			width: 100%;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		input[type="submit"] {
+			background-color: #00b4cc;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	{% include 'navbar.html' %}
+    <div class="container">
+        <h1 style="text-align:center;"> Login</h1>
+		{% if error %}
+		<p>{{ error }}</p>
+		{% endif %}
+        <form id="loginForm" class="center-form" method="POST" action="{{ url_for('login_post') }}">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" oninput="validateEmail()" placeholder="Enter your email" class="input-field" required>
+        	<p id="emailError" style="display:none; color:red;">Please enter a valid email address.(Eg: foodie@foodgasm.com)</p>
+        
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" class="input-field" required>
+        
+            <div class="center-button">
+              <button style="text-align:center;" type="submit">LogIn</button>
+            </div>
+          </form>
+		  
+        
+          <p>New Customer? <button type="button"><a href="{{ url_for('signin') }}">SIGNUP</a></button></p>
+    </div>
+
+{% include 'footer.html' %}
+</body>
+</html>
+
+

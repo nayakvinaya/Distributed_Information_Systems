@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+		body {
+  background-image: url("{{ url_for('static', filename='images/background1.jpg') }}");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+	<div style="margin-left: 10px; margin-left: 10px;">
+		<h1 style="text-align:center; font-size: 48px; color: #e9e21b; text-shadow: 2px 2px 2px rgb(130, 218, 233); font-family: 'Serif', cursive;">"Our Specials"</h1>
+	</div>
+	
+	<!--Images-->
+	<div class="row">
+	
+		<div class="card">   
+			<a href="{{ url_for('fish_curry_thali') }}"><img src="{{ url_for('static', filename='Images/fish_curry_thali.jpg') }}" alt="Image 1"></a>
+			<div class="container">
+				<h3>Dosa</h3>
+			</div>
+		</div>
+		</div>
+		<div style="margin-left: 15px; margin-right: 15px; padding: 40px;">
+			<h1 style="color: #fff; text-align: center; font-size: 30px; font-family: Arial, sans-serif; margin: 0;">Indulge in a seafood lover's delight with our fish curry thali. This authentic South Indian dish features tender fish pieces simmered in a spicy and tangy tomato-based gravy, infused with a blend of aromatic spices. Our thali comes with a serving of steaming hot basmati rice, crispy papadum, a tangy lime pickle, and a side of creamy raita. Finish off your meal with a sweet and decadent serving of traditional South Indian dessert, such as payasam or gulab jamun. This dish is not only delicious but also nutritious, as fish is a good source of lean protein and omega-3 fatty acids. Experience the explosion of flavors and textures with our fish curry thali, a must-try for all seafood lovers</h1>
+			</div>	
+	</div>
+	{% include 'footer.html' %}
+
+</body>
+</html>

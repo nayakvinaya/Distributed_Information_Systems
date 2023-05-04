@@ -1,0 +1,68 @@
+<html>
+   <head>
+      <style>
+          table {
+              border-collapse: collapse;
+              width: 100%;
+          }
+          td {
+              padding: 12px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
+          }
+          thead {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #273127;
+  color: white;
+  padding: 16px;
+}
+          tr:hover {
+              background-color: #f5f5f5;
+          }
+          a {
+              display: inline-block;
+              
+              text-align: center;
+              color: rgb(22, 3, 3);
+              text-decoration: none;
+              border-radius: 4px;
+          }
+          a:hover {
+              background-color: #0ad7cd;
+          }
+
+          body {
+      background-image: url("{{ url_for('static', filename='Images/login_signup.png') }}");
+      background-repeat: no-repeat;
+      background-size: cover;
+      }
+      </style>
+  </head>
+  
+    <body>
+      {% include 'navbar.html' %}
+      <h1 style="text-align:center; "> Our Active Users </h1>
+ <table border = 1>
+<thead>
+ <td>First Name </td>
+<td>Last Name</td>
+ <td>Phone</td>
+ <td>Age</td>
+ <td>Email</td>
+</thead>
+
+{% for row in rows %}
+ <tr>
+    <td>{{row["first_name"]}}</td>
+    <td>{{row["last_name"]}}</td>
+    <td> {{ row["number"]}}</td>
+    <td>{{row['age']}}</td>
+    <td>{{row["email"]}}</td>
+ </tr>
+{% endfor %}
+ </table>
+<br>
+ {% include 'footer.html' %}
+</body>
+</html>

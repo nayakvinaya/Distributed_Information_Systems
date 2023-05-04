@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+		body {
+  background-image: url("{{ url_for('static', filename='images/background1.jpg') }}");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+	</style>
+</head>
+<body>
+	{% include 'navbar.html' %}
+
+	<div style="margin-left: 10px; margin-left: 10px;">
+		<h1 style="text-align:center; font-size: 48px; color: #e9e21b; text-shadow: 2px 2px 2px rgb(130, 218, 233); font-family: 'Serif', cursive;">"Our Specials"</h1>
+	</div>
+	
+	<!--Images-->
+	<div class="row">
+	
+		<div class="card">   
+			<a href="{{ url_for('prawns') }}"><img src="{{ url_for('static', filename='Images/prawns.jpg') }}" alt="Image 1"></a>
+			<div class="container">
+				<h3>Dosa</h3>
+			</div>
+		</div>
+		</div>
+		<div style="margin-left: 15px; margin-right: 15px; padding: 40px;">
+			<h1 style="color: #fff; text-align: center; font-size: 30px; font-family: Arial, sans-serif; margin: 0;">Our chilli prawns are a fiery and flavorful dish that's perfect for seafood lovers. Made with succulent prawns, stir-fried with a blend of aromatic spices, garlic, and fresh green chilies, this dish packs a punch of heat and flavor. Served with a side of steaming hot rice and a cooling cucumber raita, this dish is a perfect balance of spicy and cooling flavors. Our chilli prawns are not only delicious but also nutritious, as prawns are a good source of lean protein and omega-3 fatty acids. Experience the crunch and texture of this tasty dish, and let the spices tingle your taste buds.!</h1>
+			</div>	
+	</div>
+	{% include 'footer.html' %}
+ 
+
+</body>
+</html>

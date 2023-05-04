@@ -1,0 +1,111 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0"></script>
+<head>
+  
+  <title>Chart.js examples</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+		body {
+		  background-image: url("{{ url_for('static', filename='images/chart_bkg.jpg') }}");
+
+		  background-repeat: no-repeat;
+		  background-size: cover;
+		}
+   
+  #pie-chart {
+    margin-bottom: 40px;
+  }
+
+    
+	</style>
+</head>>
+
+<body>
+  {% include 'navbar.html' %}
+
+  <h1 style="text-align:center; font-size: 40px; color: white; text-shadow: 2px 2px 2px #000; font-family: 'Brush Script MT', cursive;">"Our Customers Favourite"</h1>
+  <h2 style="text-align:center; font-size: 36px; color: white; text-shadow: 2px 2px 2px black; font-family: 'Brush Script MT'; margin: 0; padding: 0;">Top 3 Popular Items</h2>
+  <h2 style="text-align:center; font-size: 26px; color: white; text-shadow: 2px 2px 2px black; font-family: 'Brush Script MT'; margin: 0; padding: 0;">*** Chicken Biryani **Chilli Prawns *KingFish Fry</h2>
+  <canvas id="pie-chart" width="1000" height="350"></canvas>
+<script>
+  new Chart(document.getElementById("pie-chart"), {
+     type: 'pie',
+     data: {
+       labels: ["Chicken Biriyani", "Chicken Tikka", "Hara Bara Kebab", "Paneer Biriyani", "Paneer Pakoras", "Tandoori Chicken ","Chicken Malai Kebab", "Chilli Prawns","Shrimp Biriyani","KingFish Fry" ],
+       datasets: [{
+         label: "Most Popular Items",
+         data: [1600,527,650,300,433,320,678,800,567,1100],
+         backgroundColor: [
+                 'rgba(255, 242, 207, 0.8)',
+                 'rgba(215, 236, 217, 0.8)',
+                 'rgba(60, 186, 159, 0.8)',
+                 'rgba(232, 195, 185, 0.8)',
+                 'rgba(196, 88, 80, 0.8)',
+                 'rgba(229, 207, 155, 0.8)',
+                 'rgba(104, 145, 195,0.8)',
+                 'rgba(244, 173, 198, 0.8)',
+                 'rgba(54, 162, 235, 0.8)',
+                 'rgba(243, 221, 242, 0.8)'
+ 
+             ],
+             borderColor: [
+                 'rgba(255, 242, 207, 1)',
+                 'rgba(215, 236, 217, 1)',
+                 'rgba(60, 186, 159, 1)',
+                 'rgba(232, 195, 185, 1)',
+                 'rgba(196, 88, 80, 1)',
+                 'rgba(169, 169, 169, 1)',
+                 'rgba(229, 207, 155,1)',
+                 'rgba(244, 173, 198, 1)',
+                 'rgba(54, 162, 235, 1)',
+                 'rgba(243, 221, 242, 1)'
+             ],
+             borderWidth: 3
+         }]
+     },
+     options: {
+         responsive: true,
+         animation: {
+             animateScale: true,
+             animateRotate: true,
+             duration: 1000,
+             easing: 'easeInOutQuart',
+             delay: 0
+         },
+         tooltips: {
+             mode: 'index',
+             intersect: true,
+             callbacks: {
+                 label: function(tooltipItem, data) {
+                     var label = data.labels[tooltipItem.index];
+                     var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                     return label + ': ' + value;
+                 }
+               }
+             },
+         legend: {
+           display: true,
+             labels: {
+                 fontColor: 'white',
+                 boxWidth: 10,
+                 padding: 10
+             }
+         }
+       }
+       
+   });
+ </script>
+
+{% include 'footer.html' %}
+</body>
+</html>
+
+
+
+

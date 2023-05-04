@@ -1,0 +1,46 @@
+.about-us {
+    background-color: #f2f2f2;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .about-us h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  .about-us p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    
+    
+  }
+  
+  .about-us a {
+    color: #f2ae25;
+  }
+  
+  .about-us button {
+    background-image: linear-gradient(to bottom right, #F80707, #EF7C0A); /* set a diagonal gradient from red to orange */
+    color: #FFF; /* set the text color to white */
+    font-size: 24px; /* increase the font size to 24 pixels */
+    padding: 12px 24px; /* add slightly more padding to the button */
+    border: none; /* remove the border to make the button look more modern */
+    border-radius: 20px; /* add a border-radius to make the button more rounded */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.25); /* add a subtle shadow to the button */
+    transition: all 0.2s ease-in-out; /* add a smooth transition to the button when hovered or clicked */
+    margin-bottom: 12px;
+  }
+    
+    .about-us button:hover {
+    background-image: linear-gradient(to bottom right, #EF7C0A, #F80707); /* reverse the gradient on hover */
+    transform: translateY(-2px); /* move the button up slightly when hovered */
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.35); /* increase the shadow when hovered */
+    }
+    
+    .about-us button:focus {
+    outline: none; /* remove the outline when focused to avoid a "glow" effect */
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.45); /* increase the shadow when focused */
+    }

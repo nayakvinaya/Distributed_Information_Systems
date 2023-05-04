@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='enteritem.css') }}">
+      <style>
+         body {
+            background-image: url("{{ url_for('static', filename='images/login_signup.png') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+         }
+         label {
+            font-size: 18px;
+            font-weight: bold;
+         }
+         input[type="text"], input[type="number"], select {
+            font-size: 16px;
+            padding: 2px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+         }
+         input[type="submit"] {
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+         }
+         
+      </style>
+      <title>Items Entry</title>
+   </head>
+   <body>
+      <div>
+         {% include 'navbar.html' %}
+   </div>
+      <form action="{{ url_for('add_item') }}" method="POST" enctype="multipart/form-data">
+         <span style="font-size: 28px; font-weight: bold; color: darkblue;">{{msg}}</span>
+         <label for="category" style="font-size: 24px;">Select category:</label>
+         <select name="category" id="category" style="font-size: 18px;">
+            <option value="Non-Veg Appetizer">Non-Veg Appetizer</option>
+            <option value="Veg Appetizer">Veg Appetizer</option>
+            <option value="Non Veg Biriyanis">Non Veg Biriyanis</option>
+            <option value="Veg Biriyanis">Veg Biriyanis</option>
+            <option value="Family Pack Dum Biryani">Family Pack Dum Biryani</option>
+            <option value="Veg Curries N Combos">Veg Curries N Combos</option>
+            <option value="Non Veg Curries N Combos">Non Veg Curries N Combos</option>
+            <option value="Chaat">Chaat</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Naans & Rotis">Naans & Rotis</option>
+         </select><br><br>
+         <label for="item_name" style="font-size: 24px;">Item Name:</label><br>
+         <input type="text" name="item_name" style="font-size: 24px;" required><br><br>
+         <label for="price" style="font-size: 24px;">Price:</label><br>
+         <input type="number" name="price" step="0.01" style="font-size: 24px;" required><br><br>
+         
+         <input type="submit" value="Submit" style="font-size: 20px;">
+         <br><br>
+      
+         <a href="{{ url_for('index') }}" style="font-size: 20px; margin-bottom: 10px;">Go back to home page</a>
+      </form>
+      {% include 'footer.html' %}
+   </body>
+</html>

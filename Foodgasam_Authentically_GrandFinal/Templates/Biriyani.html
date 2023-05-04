@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+		body {
+  background-image: url("{{ url_for('static', filename='images/background1.jpg') }}");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+	{% include 'navbar.html' %}
+
+	<div style="margin-left: 10px; margin-left: 10px;">
+		<h1 style="text-align:center; font-size: 48px; color: #e9e21b; text-shadow: 2px 2px 2px rgb(130, 218, 233); font-family: 'Serif', cursive;">"Our Specials"</h1>
+	</div>
+	
+	<!--Images-->
+	<div class="row">
+	
+		<div class="card">   
+			<a href="{{ url_for('biriyani') }}"><img src="{{ url_for('static', filename='Images/biriyani.jpg') }}" alt="Image 1"></a>
+			<div class="container">
+				<h3>Dosa</h3>
+			</div>
+		</div>
+		</div>
+		<div style="margin-left: 15px; margin-right: 15px; padding: 40px;">
+			<h1 style="color: #fff; text-align: center; font-size: 30px; font-family: Arial, sans-serif; margin: 0;">A fragrant and flavorful dish made with long-grain basmati rice, mixed with tender chunks of meat or vegetables and a blend of aromatic spices. Our biryani is slow-cooked in a sealed pot to allow the flavors to infuse and create a mouth-watering taste sensation. Served with raita, a cooling yogurt-based sauce, and your choice of accompaniments, including a boiled egg, pickles, and fried onions. This hearty and satisfying dish is a staple in South Asian cuisine and is known for its rich and complex flavors. Whether you prefer chicken, lamb, beef, or vegetarian, our biryani is sure to impress and satisfy your taste buds.</h1>
+			</div>	
+	</div>
+	{% include 'footer.html' %}
+
+</body>
+</html>

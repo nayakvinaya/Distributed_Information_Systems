@@ -1,0 +1,159 @@
+<html lang="en">
+<head>
+    <title>Our Team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/teamwork.jpg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        </style>
+    <style>
+        footer {
+   position:static;
+   bottom: 0;
+ }
+        body {
+             font-family: Arial, Helvetica, sans-serif;
+             margin: 0 auto;
+             background-color: #f2f2f2;
+         }
+         h1 {
+             text-align: center;
+             margin-top: 5px;
+             margin-bottom: 60px;
+         }
+         .row {
+             display: flex;
+             justify-content: center;
+             flex-wrap: wrap;
+             margin-bottom: 30px;
+         }
+         .card {
+   background-color: white;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   margin: 10px;
+   width: 300px;
+   transition: transform 0.3s ease;
+   margin-bottom: 80px;
+ }
+ 
+ .card:hover {
+   transform: scale(1.05);
+ }
+         .card img {
+             width: 100%;
+             height: 380px;
+             object-fit: cover;
+             border-top-left-radius: 5px;
+             border-top-right-radius: 5px;
+         }
+         .container {
+             height: 320px; /* set a fixed height for the container */
+     padding: 20px;
+     text-align: center;
+     position: relative; 
+ 
+         }
+         h2 {
+             font-size: 24px;
+             margin-bottom: 10px;
+         }
+         .title {
+             color: #808080;
+             font-size: 18px;
+             margin-bottom: 10px;
+         }
+         p {
+             margin-bottom: 10px;
+             font-size: 16px;
+         }
+          p1{
+             text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     cursor: pointer;
+     border-radius: 5px;
+     position: absolute; /* set the button position to absolute */
+     bottom: 60px; /* position the button 20px from the bottom */
+     left: 50%; /* center the button horizontally */
+     transform: translateX(-50%);
+ 
+         }
+         .button {
+             background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 10px 20px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     cursor: pointer;
+     border-radius: 5px;
+     position: absolute; /* set the button position to absolute */
+     bottom: 10px; /* position the button 20px from the bottom */
+     left: 50%; /* center the button horizontally */
+     transform: translateX(-50%);
+         }
+         .button:hover {
+             background-color: #3e8e41;
+         }
+     </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Meet Our Team</h1>
+    <div class="row">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/v.jpeg') }}" alt="Jane">
+            <div class="container">
+                <h2>Vinaya Nayak</h2>
+                <p class="title">Aspiring Data engineer</p>
+                <p style="color: rgb(83, 28, 4)"> Vinaya is pursuing her masters in business analytics at University of South Florida.</p>
+                <p style="color: rgb(83, 28, 4)"> <b>Contribution :</b> Designed the AboutUs page and worked on functionality of signup/login and item page</p>
+                <p1><a href="mailto:nayakv@usf.edu">nayakv@usf.edu</a> </p1>
+                <button class="button"> <a href="https://www.linkedin.com/in/vinayarajaramnayak/"> Contact</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/Pavan.jpg') }}" alt="Pavan">
+
+            <div class="container">
+                <h2>Sai Pavan Banala</h2>
+                <p class="title">Aspiring Data Scientist</p>
+                <p style="color: rgb(83, 28, 4)"> Pavan is pursuing his masters in business analytics at University of South Florida.</p>
+                <p style="color: rgb(83, 28, 4)"> <b>Contribution :</b> Designed the structure of the food pages, worked on functionality of Menu and item pages</p>
+                <p1><a href="mailto:banala@usf.edu">banala@usf.edu</a> </p1>
+                <button class="button"> <a href="https://www.linkedin.com/in/sai-pavan-banala-a7b243118/"> Contact</a></button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/Akhil.jpeg') }}" alt="Akhil">
+            <div class="container">
+                <h2>Akhil Ankireddypalli</h2>
+                <p class="title">Aspiring Data Analyst</p>
+                <p style="color: rgb(83, 28, 4)"> Akhil is pursuing his masters in business analytics at University of South Florida.</p>
+                <p style="color: rgb(83, 28, 4)"> <b>Contribution :</b> Designed layouts and worked on validations for signup page making the pages visually apealing</p>
+                <p1><a href="mailto:aankireddypalli@usf.edu">aankireddypalli@usf.edu</a> </p1>
+                <button class="button"> <a href="https://www.linkedin.com/in/akhil-ankireddypallli-89515b199/"> Contact</a></button>
+            </div>
+        </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/Gayathri.jpg') }}" alt="Gayathri">
+
+        <div class="container">
+            <h2>Gayathri Sundaram</h2>
+            <p class="title">Aspiring Data engineer</p>
+            <p style="color: rgb(83, 28, 4)"> Gayathri is pursuing her masters in business analytics at University of South Florida.</p>
+            <p style="color: rgb(83, 28, 4)"> <b>Contribution :</b> Designed layouts and styled layouts for data analytics page and styling of signup and login pages</p>
+            <p1><a href="mailto:gayathris@usf.edu">gayathris@usf.edu</a> </p1>
+            <button class="button"> <a href="https://www.linkedin.com/in/gayathrishanmugam/"> Contact</a></button>
+        </div>
+      </div>
+ 
+</body>
+</html>

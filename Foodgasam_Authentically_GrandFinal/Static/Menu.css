@@ -1,0 +1,121 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 48px;
+    color: #c62828;
+    text-shadow: 2px 2px 2px #000;
+    text-align: center;
+    margin: 0;
+    padding: 40px 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #240bde;
+}
+
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+
+.active {
+    background-color: #3f18bf;
+    color: white;
+}
+
+/* Cart */
+
+#cart {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #888888;
+    border-radius: 10px 10px 0 0;
+    width: 80%;
+    max-width: 600px;
+    z-index: 1; /* add this line */
+  }
+  
+
+#cart h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#cart-items li {
+    margin-bottom: 10px;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td button {
+    background-color: #8183ec;
+    color: rgb(246, 246, 248);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #0e0bea;
+}
+
+td select {
+    width: 50px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}

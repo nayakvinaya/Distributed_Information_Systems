@@ -1,0 +1,85 @@
+
+
+.signup-container {
+align-items: center;
+background-color: #fff;
+max-width: 400px;
+margin: 0 auto;
+padding: 50px 125px;
+border-radius: 5px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+border: 3px solid #ccc;
+}
+
+.input-field[type="text"], .input-field[type="tel"], .input-field[type="number"], .input-field[type="email"], .input-field[type="password"] {
+width: 100%; /* Set the desired width for your input boxes */
+padding: 10px;
+margin-bottom: 20px;
+border-radius: 5px;
+border: none;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+font-size: 18px; /* Increase the font size as desired */
+}
+
+body {
+  font-family: "Open Sans", sans-serif; /* or any other web font */
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+.input-field {
+  width: 100%; /* Set the desired width for your input boxes */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"] {
+	padding: 10px;
+			width: 75%;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		
+}
+.input-field:focus {
+  box-shadow: 0 0 10px rgba(0, 180, 204, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+button[type="submit"] {
+  
+  background: linear-gradient(to bottom right, #00b4cc, #0077b6);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #00b4cc;
+}
+button[type="button"]:hover {
+  background-color: #00b4cc;
+}

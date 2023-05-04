@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Menu.css') }}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <h1>Checkout</h1>
+
+    <div id="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <div id="total-price"></div>
+    </div>
+
+    <form>
+        <h2>Billing Information</h2>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required></textarea>
+        </div>
+        <div>
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" required>
+        </div>
+        <div>
+            <label for="exp-date">Expiration Date</label>
+            <input type="month" id="exp-date" name="exp-date" required>
+        </div>
+        <div>
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required>
+        </div>
+        <button type="submit">Submit Payment</button>
+    </form>
+
+    <script>
+        // Load cart data from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = JSON.parse(localStorage.getItem('total')) || 0;
+        
+        function updateCart() {
+            let cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+    
+            cart.forEach(cartItem => {
+                let li = document.createElement('li');
+                li.innerHTML = `${cartItem.name} x ${cartItem.quantity} - $${(cartItem.price * cartItem.quantity).toFixed(2)}`;
+                
+                let removeButton = document.createElement('button');
+                removeButton.innerHTML = 'Remove';
+                removeButton.onclick = function() {
+                    cart = cart.filter(item => item.name !== cartItem.name);
+                    total -= cartItem.price * cartItem.quantity;
+    
+                    updateCart();
+                    updateTotal();
+    
+                    // Update localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    localStorage.setItem('total', JSON.stringify(total));
+                };
+                li.appendChild(removeButton);
+                
+                cartItems.appendChild(li);
+            });
+        }
+    
+        function updateTotal() {
+            document.getElementById('total-price').innerHTML = `Total Price: $${total.toFixed(2)}`;
+        }
+    
+        updateCart();
+        updateTotal();
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+    <title>HTMl Practice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css') }}">
+    <style>
+    body {
+        background-image: url("{{ url_for('static', filename='images/background1.jpg') }}");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    </head>
+    <body>
+        {% if firstname %}
+        <h2 style="text-align:center; color: #5ab5c0; font-family: 'Brush Script MT', cursive; font-size: 38px; margin-top: 1px;">Hi, {{ firstname }}! Welcome to Foodgasam </h2>
+
+{% endif %}
+{% include 'navbar.html' %}
+        <div style="background: linear-gradient(to right, #fdcbf1, #a6c1ee);margin-left: 15px; margin-right: 15px; padding: 40px;">
+            <h1 style="color: #fff; text-align: center; font-size: 36px; font-family: Arial, sans-serif; margin: 0;">Discover the Rich Flavors and Spices of Indian Cuisine at FoodGasm's Newest Addition: An Authentic Indian Cuisine Restaurant</h1>
+            <p style="color: #fff; text-align: center; font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 20px;">Experience our comfortable and relaxed environment as you indulge in classic Indian dishes made with the freshest ingredients and prepared by our talented chefs. From delicious samosas to fragrant biriyanis, there's something for every palate. Whether you're a seasoned fan of Indian cuisine or trying it for the first time, come and savor the flavors of FoodGasam's Indian Cuisine restaurant.</p>
+        </div>
+        <div style="margin-top: 50px; margin-bottom: 40px;">
+            <h1 style="text-align:center; font-size: 48px; color: #5ab5c0; text-shadow: 2px 2px 2px #000; font-family: 'Brush Script MT', cursive;">"Our Specials"</h1>
+          </div>
+          
+   <!--images-->
+        <div class="row">
+
+            <div class="card">   
+                <a href="{{ url_for('Dosa') }}"><img src="{{ url_for('static', filename='Images/Dosa.jpg') }}" alt="Image 1"></a>
+                <div class="container">
+                    <h3>Dosa</h3>
+                </div>
+            </div>
+            <div class="card">   
+                <a href="{{ url_for('paneer_tikka') }}"><img src="{{ url_for('static', filename='Images/Paneer_Tikka.jpg') }}" alt="Image 1"></a>
+                <div class="container">
+                    <h3>Panner Tikka</h3>
+                </div>
+            </div>
+            <div class="card">   
+                <a href="{{ url_for('king_fisher') }}"><img src="{{ url_for('static', filename='Images/King_fish_fry.jpg') }}" alt="Image 1"></a>
+                <div class="container">
+                    <h3>King Fish Fry</h3>
+                </div>
+            </div>
+            <div class="card">   
+                <a href="{{ url_for('fish_curry_thali') }}"><img src="{{ url_for('static', filename='Images/fish_curry_thali.jpg') }}"  alt="Image 1"></a>
+                <div class="container">
+                    <h3>Fish Curry Thali</h3>
+                </div>
+            </div>
+            <div class="card">   
+                <a href="{{ url_for('biriyani') }}"><img src="{{ url_for('static', filename='Images/biriyani.jpg') }}"  alt="Image 1"></a>
+                <div class="container">
+                    <h3>Ambur Dum Biriyani</h3>
+                </div>
+            </div>
+            <div class="card">   
+                <a href="{{ url_for('prawns') }}"><img src="{{ url_for('static', filename='Images/prawns.jpg') }}"  alt="Image 1"></a>
+                <div class="container">
+                    <h3>Chilli Prawns</h3>
+                </div>
+            </div>
+    </div>
+        
+        
+      
+    {% include 'footer.html' %}
+
+    </body>
+</html>
